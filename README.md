@@ -1,10 +1,24 @@
-# Reinforced-Walls
+[![RimWorld 1.5](https://img.shields.io/badge/RimWorld-1.5-brightgreen.svg?style=plastic&logo=steam)](https://rimworldgame.com/)
+[![RimWorld 1.4](https://img.shields.io/badge/RimWorld-1.4-brightgreen.svg?style=plastic&logo=steam)](https://rimworldgame.com/)
 
+# Reinforced Walls (continued) for RimWorld
 
-MIT License; Copyright (c) 2020 Billy Barnes
+Based on the original [Reinforced-Walls](https://github.com/Neceros/Reinforced-Walls) by NECEROS.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Adds expensive heavy reinforced walls and embrasures, with triple base hit points over vanilla walls. They also have a significant damage resistance against breach weapons, mining, thump cannons, basic projectiles, and explosions. Unlocked by researching one new industrial level technology, which (by default) has a pre-requisite to Microelectronics and requires a hi-tech research bench.
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+Several aspects of the mod can be tweaked in the mod settings, powered by XML Extensions (required mod dependency).
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Should work with all stony and metallic materials, even modded if they belong to one of those categories.
+
+## Damage multipliers
+
+```text
+Bomb                0.75
+Thump               0.75
+Demolish            0.65
+Mining              0.35
+Bullet              0.30
+ArrowHighVelocity   0.20
+Arrow               0.15
+```

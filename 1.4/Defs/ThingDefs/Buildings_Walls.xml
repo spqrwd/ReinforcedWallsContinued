@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Abstract="True" Name="ReinforcedWallBase" ParentName="Wall">
+    <statBases Inherit="False">
+      <MaxHitPoints>900</MaxHitPoints>
+      <WorkToBuild>405</WorkToBuild>
+      <Flammability>0.25</Flammability>
+    </statBases>
+    <costStuffCount>15</costStuffCount>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costList Inherit="False" />
+    <building>
+      <relatedBuildCommands>
+        <li MayRequire="Wemd.ReinforcedDoors">WDReinforcedDoor</li>
+        <li MayRequire="Wemd.ReinforcedDoors">WDReinforcedAutodoor</li>
+        <li MayRequire="Oganesson.simple.gate">OgGate</li>
+      </relatedBuildCommands>
+    </building>
+    <damageMultipliers Inherit="False">
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Thump</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Demolish</damageDef>
+        <multiplier>0.65</multiplier>
+      </li>
+      <li>
+        <damageDef>Mining</damageDef>
+        <multiplier>0.35</multiplier>
+      </li>
+      <li>
+        <damageDef>Bullet</damageDef>
+        <multiplier>0.30</multiplier>
+      </li>
+      <li>
+        <damageDef>ArrowHighVelocity</damageDef>
+        <multiplier>0.20</multiplier>
+      </li>
+      <li>
+        <damageDef>Arrow</damageDef>
+        <multiplier>0.15</multiplier>
+      </li>
+    </damageMultipliers>
+    <researchPrerequisites>
+      <li>ReinforcedWalls</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="ReinforcedWallBase">
+    <defName>HeavyReinforcedWall</defName>
+    <label>heavy reinforced wall</label>
+    <description>A stronger impassable wall, reinforced to withstand all forms of damage and direct explosions. Capable of holding up a roof.</description>
+    <uiIconPath>RWIcon</uiIconPath>
+    <graphicData>
+      <texPath>Reinforced_Walls</texPath>
+    </graphicData>
+    <fillPercent>1</fillPercent>
+  </ThingDef>
+
+  <ThingDef ParentName="ReinforcedWallBase">
+    <defName>HeavyReinforcedEmbrasure</defName>
+    <label>heavy reinforced embrasure</label>
+    <description>A stronger impassable wall, with a tactical opening to fire through. Reinforced to withstand all forms of damage and direct explosions. Capable of holding up a roof.</description>
+    <uiIconPath>RWEmbrasureIcon</uiIconPath>
+    <graphicData>
+      <texPath>RW_Embrasure</texPath>
+    </graphicData>
+    <fillPercent>0.75</fillPercent>
+    <disableImpassableShotOverConfigError IgnoreIfNoMatchingField="True">true</disableImpassableShotOverConfigError>
+  </ThingDef>
+
+</Defs>

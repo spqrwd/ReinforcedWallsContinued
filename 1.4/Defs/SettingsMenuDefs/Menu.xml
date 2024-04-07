@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <XmlExtensions.SettingsMenuDef>
+    <defName>ReinforcedWallsContinuedSettingsMenu</defName>
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <label>Reinforced Walls (Continued)</label>
+    <settings>
+
+      <li Class="XmlExtensions.Setting.MiddleColumn">
+        <split>0.75</split>
+        <settings>
+          <li Class="XmlExtensions.Setting.Section">
+            <settings>
+              <li Class="XmlExtensions.Setting.Text">
+                <text>For any changes to take effect the game must be restarted!</text>
+                <font>Medium</font>
+                <anchor>Middle</anchor>
+              </li>
+
+              <li Class="XmlExtensions.Setting.GapLine"/>
+
+              <!-- Wall Base Hit Points -->
+
+              <li Class="XmlExtensions.Setting.Numeric">
+                <key>reinforcedWallsBaseHitPoints</key>
+                <defaultValue>900</defaultValue>
+                <min>1</min>
+                <max>4000</max>
+                <label>Walls base hitpoints  (default: 900)</label>
+              </li>
+              <li Class="XmlExtensions.Setting.SetColor">
+                <color>(163,177,188)</color>
+              </li>
+              <li Class="XmlExtensions.Setting.Text">
+                <text>The maximum base hitpoints these walls / embrasures have. The value for vanilla walls is 300.</text>
+              </li>
+              <li Class="XmlExtensions.Setting.SetColor"/>
+
+              <!-- Cover Percentage -->
+
+              <li Class="XmlExtensions.Setting.GapLine"/>
+
+              <li Class="XmlExtensions.Setting.Slider">
+                <key>reinforcedEmbrasuresFillPercentage</key>
+                <defaultValue>75</defaultValue>
+                <min>50</min>
+                <max>99</max>
+                <decimals>0</decimals>
+                <label>Embrasure effective cover percentage:  {reinforcedEmbrasuresFillPercentage}    (default: 75)</label>
+              </li>
+              <li Class="XmlExtensions.Setting.SetColor">
+                <color>(163,177,188)</color>
+              </li>
+              <li Class="XmlExtensions.Setting.Text">
+                <text>Determines how much cover in percentage the embrasure offers from projectiles.</text>
+              </li>
+              <li Class="XmlExtensions.Setting.SetColor"/>
+
+              <!-- Material Cost Settings -->
+
+              <li Class="XmlExtensions.Setting.GapLine"/>
+
+              <li Class="XmlExtensions.Setting.Numeric">
+                <key>reinforcedWallsStuffCostCount</key>
+                <defaultValue>15</defaultValue>
+                <min>1</min>
+                <max>99</max>
+                <label>Walls base material cost  (default: 15)</label>
+              </li>
+              <li Class="XmlExtensions.Setting.SetColor">
+                <color>(163,177,188)</color>
+              </li>
+              <li Class="XmlExtensions.Setting.Text">
+                <text>Determines how much base material (metal/stone) one piece of wall costs.</text>
+              </li>
+              <li Class="XmlExtensions.Setting.SetColor"/>
+
+              <li Class="XmlExtensions.Setting.GapLine"/>
+
+              <li Class="XmlExtensions.Setting.Checkbox">
+                <key>reinforcedWallsHyperweaveToggle</key>
+                <defaultValue>True</defaultValue>
+                <label>Requires Hyperweave</label>
+              </li>
+              <li Class="XmlExtensions.Setting.ToggleableSettings">
+                <key>reinforcedWallsHyperweaveToggle</key>
+
+                <caseFalse>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Enables adding Hyperweave to the construction cost.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseFalse>
+
+                <caseTrue>
+                  <li Class="XmlExtensions.Setting.Numeric">
+                    <key>reinforcedWallsHyperweaveCost</key>
+                    <defaultValue>5</defaultValue>
+                    <min>1</min>
+                    <max>99</max>
+                    <label>Amount needed  (default: 5)</label>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Sets the amount of Hyperweave required to construct a single piece of wall.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseTrue>
+              </li>
+
+              <!-- Research project unlock requirements -->
+
+              <li Class="XmlExtensions.Setting.GapLine"/>
+
+              <li Class="XmlExtensions.Setting.Checkbox">
+                <key>reinforcedWallsHiTechResearchBenchToggle</key>
+                <defaultValue>True</defaultValue>
+                <label>Unlocking the research project requires completion of Microelectronics.</label>
+              </li>
+              <li Class="XmlExtensions.Setting.ToggleableSettings">
+                <key>reinforcedWallsHiTechResearchBenchToggle</key>
+
+                <caseFalse>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>DISABLED: The research project can be unlocked with the simple research bench.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseFalse>
+
+                <caseTrue>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>ENABLED: Unlocking the research project requires the hi-tech research bench.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseTrue>
+              </li>
+
+              <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>24</spacing>
+              </li>
+              <li Class="XmlExtensions.Setting.ResetSettings"/>
+            </settings>
+          </li>
+        </settings>
+      </li>
+
+    </settings>
+  </XmlExtensions.SettingsMenuDef>
+
+</Defs>

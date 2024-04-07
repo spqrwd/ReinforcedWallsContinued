@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforceEmbrasuresToggle</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+
+    <!-- Cover procentage -->
+
+      <Operation Class="XmlExtensions.AggregateValues">
+        <valueOperations>
+          <Operation Class="XmlExtensions.UseSetting">
+            <modId>crewd.reinforcedwallscontinued</modId>
+            <key>reinforcedEmbrasuresFillPercentage</key>
+            <defaultValue>75</defaultValue>
+          </Operation>
+          <Operation Class="XmlExtensions.CreateVariable">
+              <value>{reinforcedEmbrasuresFillPercentage}</value>
+              <value2>100</value2>
+              <operation>/</operation>
+              <storeIn>reinforcedEmbrasuresFillPercentValue</storeIn>
+          </Operation>
+        </valueOperations>
+        <apply>
+
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]/fillPercent</xpath>
+            <value>
+              <fillPercent>{reinforcedEmbrasuresFillPercentValue}</fillPercent>
+            </value>
+          </li>
+
+        </apply>
+      </Operation>
+
+      <!-- Base hitpoints -->
+
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>crewd.reinforcedwallscontinued</modId>
+        <key>reinforcedWallsBaseHitPoints</key>
+        <defaultValue>900</defaultValue>
+        <apply>
+
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]/statBases/MaxHitPoints</xpath>
+            <value>
+              <MaxHitPoints>{reinforcedWallsBaseHitPoints}</MaxHitPoints>
+            </value>
+          </li>
+
+        </apply>
+      </Operation>
+
+      <!-- Base material cost count -->
+
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>crewd.reinforcedwallscontinued</modId>
+        <key>reinforcedWallsStuffCostCount</key>
+        <defaultValue>15</defaultValue>
+        <apply>
+
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]/costStuffCount</xpath>
+            <value>
+              <costStuffCount>{reinforcedWallsStuffCostCount}</costStuffCount>
+            </value>
+          </li>
+
+        </apply>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
+
+  <!-- Hyperweave material cost count -->
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedWallsHyperweaveToggle</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>crewd.reinforcedwallscontinued</modId>
+        <key>reinforcedWallsHyperweaveCost</key>
+        <defaultValue>5</defaultValue>
+        <apply>
+
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]/costList</xpath>
+            <value>
+              <costList>
+                <Hyperweave>{reinforcedWallsHyperweaveCost}</Hyperweave>
+              </costList>
+            </value>
+          </li>
+
+        </apply>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
+
+  <!-- Research requirements -->
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedWallsHiTechResearchBenchToggle</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]</xpath>
+        <value>
+          <hiddenPrerequisites>
+            <li>MicroelectronicsBasics</li>
+          </hiddenPrerequisites>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]</xpath>
+        <value>
+          <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        </value>
+      </li>
+
+    </caseTrue>
+  </Operation>
+
+</Patch>

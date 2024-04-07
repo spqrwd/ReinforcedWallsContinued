@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>ReinforcedWalls</defName>
+    <label>reinforced walls</label>
+    <description>Expensive, reinforced walls and embrasures that are resistant to all forms of damage.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Smithing</li>
+      <li>Stonecutting</li>
+    </prerequisites>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>4.25</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>
