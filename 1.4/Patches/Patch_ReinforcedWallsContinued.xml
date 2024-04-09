@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+  <!-- Research requirements -->
+
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>crewd.reinforcedwallscontinued</modId>
-    <key>reinforceEmbrasuresToggle</key>
+    <key>reinforcedWallsResearchRequirementsToggle</key>
     <defaultValue>true</defaultValue>
     <caseTrue>
 
-    <!-- Cover procentage -->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]</xpath>
+        <value>
+          <hiddenPrerequisites>
+            <li>MicroelectronicsBasics</li>
+          </hiddenPrerequisites>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]</xpath>
+        <value>
+          <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        </value>
+      </li>
+
+    </caseTrue>
+  </Operation>
+
+  <!-- Reinforced Embrasures -->
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedWallsEmbrasuresToggle</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
 
       <Operation Class="XmlExtensions.AggregateValues">
         <valueOperations>
@@ -25,15 +52,50 @@
         </valueOperations>
         <apply>
 
-          <li Class="PatchOperationReplace">
-            <xpath>/Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]/fillPercent</xpath>
-            <value>
-              <fillPercent>{reinforcedEmbrasuresFillPercentValue}</fillPercent>
-            </value>
-          </li>
+          <Operation Class="PatchOperationSequence">
+            <success>Normal</success>
+            <operations>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs</xpath>
+                <value>
+                  <ThingDef ParentName="ReinforcedWallBase">
+                    <defName>HeavyReinforcedEmbrasure</defName>
+                    <label>heavy reinforced embrasure</label>
+                    <description>A stronger impassable wall, with a tactical opening to shoot through. Reinforced to withstand all forms of damage and direct explosions. Capable of holding up a roof.</description>
+                    <uiIconPath>RWEmbrasureIcon</uiIconPath>
+                    <graphicData>
+                      <texPath>RW_Embrasure</texPath>
+                    </graphicData>
+                    <fillPercent>{reinforcedEmbrasuresFillPercentValue}</fillPercent>
+                    <disableImpassableShotOverConfigError IgnoreIfNoMatchingField="True">true</disableImpassableShotOverConfigError>
+                  </ThingDef>
+                </value>
+              </li>
+
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
+                <value>
+                  <description>Expensive, reinforced walls and embrasures that are resistant to all forms of damage.</description>
+                </value>
+              </li>
+
+            </operations>
+          </Operation>
 
         </apply>
       </Operation>
+
+    </caseTrue>
+  </Operation>
+
+  <!-- Walls Base Settings -->
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedWallsDummyToggle</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
 
       <!-- Base hitpoints -->
 
@@ -74,6 +136,7 @@
     </caseTrue>
   </Operation>
 
+
   <!-- Hyperweave material cost count -->
 
   <Operation Class="XmlExtensions.OptionalPatch">
@@ -99,33 +162,6 @@
 
         </apply>
       </Operation>
-
-    </caseTrue>
-  </Operation>
-
-  <!-- Research requirements -->
-
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>crewd.reinforcedwallscontinued</modId>
-    <key>reinforcedWallsHiTechResearchBenchToggle</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-
-      <li Class="PatchOperationAdd">
-        <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]</xpath>
-        <value>
-          <hiddenPrerequisites>
-            <li>MicroelectronicsBasics</li>
-          </hiddenPrerequisites>
-        </value>
-      </li>
-
-      <li Class="PatchOperationAdd">
-        <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]</xpath>
-        <value>
-          <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-        </value>
-      </li>
 
     </caseTrue>
   </Operation>

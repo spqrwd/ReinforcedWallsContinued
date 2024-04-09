@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HugsLib.UpdateFeatureDef Abstract="true" Name="UpdateFeatureBase">
+    <modNameReadable>Reinforced Walls (Continued)</modNameReadable>
+    <modIdentifier>crewd.reinforcedwallscontinued</modIdentifier>
+    <linkUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3215305656</linkUrl>
+  </HugsLib.UpdateFeatureDef>
+
+  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+    <defName>ReinforcedWallsContinued_1_0_0</defName>
+    <assemblyVersion>1.0.0</assemblyVersion>
+    <content>Reinforced Walls (Continued) initial version.|
+Refactored, rebalanced, and enhanced the original mod by NECEROS.
+</content>
+  </HugsLib.UpdateFeatureDef>
+
+  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+    <defName>ReinforcedWallsContinued_1_1_0</defName>
+    <assemblyVersion>1.1.0</assemblyVersion>
+    <content>Updated damage modifiers.</content>
+  </HugsLib.UpdateFeatureDef>
+
+  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+    <defName>ReinforcedWallsContinued_1_2_0</defName>
+    <assemblyVersion>1.2.0</assemblyVersion>
+    <content>- Added an enable/disable settings toggle for embrasures|
+- Rearranged the mod settings, updated descriptions
+</content>
+  </HugsLib.UpdateFeatureDef>
+
+</Defs>

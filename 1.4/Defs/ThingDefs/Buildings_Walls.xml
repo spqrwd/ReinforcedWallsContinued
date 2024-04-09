@@ -66,16 +66,4 @@
     <fillPercent>1</fillPercent>
   </ThingDef>
 
-  <ThingDef ParentName="ReinforcedWallBase">
-    <defName>HeavyReinforcedEmbrasure</defName>
-    <label>heavy reinforced embrasure</label>
-    <description>A stronger impassable wall, with a tactical opening to fire through. Reinforced to withstand all forms of damage and direct explosions. Capable of holding up a roof.</description>
-    <uiIconPath>RWEmbrasureIcon</uiIconPath>
-    <graphicData>
-      <texPath>RW_Embrasure</texPath>
-    </graphicData>
-    <fillPercent>0.75</fillPercent>
-    <disableImpassableShotOverConfigError IgnoreIfNoMatchingField="True">true</disableImpassableShotOverConfigError>
-  </ThingDef>
-
 </Defs>
