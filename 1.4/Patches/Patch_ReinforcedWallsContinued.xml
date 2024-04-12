@@ -97,7 +97,7 @@
     <defaultValue>true</defaultValue>
     <caseTrue>
 
-      <!-- Base hitpoints -->
+      <!-- Base hit points -->
 
       <Operation Class="XmlExtensions.UseSetting">
         <modId>crewd.reinforcedwallscontinued</modId>
@@ -119,23 +119,44 @@
 
       <Operation Class="XmlExtensions.UseSetting">
         <modId>crewd.reinforcedwallscontinued</modId>
-        <key>reinforcedWallsStuffCostCount</key>
+        <key>reinforcedWallsCostStuffCount</key>
         <defaultValue>15</defaultValue>
         <apply>
 
           <li Class="PatchOperationReplace">
             <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]/costStuffCount</xpath>
             <value>
-              <costStuffCount>{reinforcedWallsStuffCostCount}</costStuffCount>
+              <costStuffCount>{reinforcedWallsCostStuffCount}</costStuffCount>
             </value>
           </li>
 
         </apply>
       </Operation>
 
+
+      <!-- Enable / disable wooden doors -->
+
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>crewd.reinforcedwallscontinued</modId>
+        <key>reinforcedWallsStuffCategoriesWoodyToggle</key>
+        <defaultValue>false</defaultValue>
+        <caseFalse>
+
+          <li Class="XmlExtensions.PatchOperationAdd">
+            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+            <value>
+              <stuffCategories Inherit="False">
+                <li>Metallic</li>
+                <li>Stony</li>
+              </stuffCategories>
+            </value>
+          </li>
+
+        </caseFalse>
+      </Operation>
+
     </caseTrue>
   </Operation>
-
 
   <!-- Hyperweave material cost count -->
 
@@ -151,11 +172,75 @@
         <defaultValue>5</defaultValue>
         <apply>
 
-          <li Class="PatchOperationReplace">
-            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]/costList</xpath>
+          <li Class="XmlExtensions.PatchOperationSafeAdd">
+            <xpath>/Defs/ThingDef[  @Name = "ReinforcedWallBase"
+                               or defName = "WDReinforcedDoor"
+                               or defName = "WDReinforcedAutodoor" ]</xpath>
             <value>
               <costList>
                 <Hyperweave>{reinforcedWallsHyperweaveCost}</Hyperweave>
+              </costList>
+            </value>
+          </li>
+
+        </apply>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
+
+  <!-- Devilstrand material cost count -->
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedWallsDevilstrandToggle</key>
+    <defaultValue>false</defaultValue>
+    <caseTrue>
+
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>crewd.reinforcedwallscontinued</modId>
+        <key>reinforcedWallsDevilstrandCost</key>
+        <defaultValue>5</defaultValue>
+        <apply>
+
+          <li Class="XmlExtensions.PatchOperationSafeAdd">
+            <xpath>/Defs/ThingDef[  @Name = "ReinforcedWallBase"
+                               or defName = "WDReinforcedDoor"
+                               or defName = "WDReinforcedAutodoor" ]</xpath>
+            <value>
+              <costList>
+                <DevilstrandCloth>{reinforcedWallsDevilstrandCost}</DevilstrandCloth>
+              </costList>
+            </value>
+          </li>
+
+        </apply>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
+
+  <!-- Uranium material cost count -->
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedWallsUraniumToggle</key>
+    <defaultValue>false</defaultValue>
+    <caseTrue>
+
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>crewd.reinforcedwallscontinued</modId>
+        <key>reinforcedWallsUraniumCost</key>
+        <defaultValue>5</defaultValue>
+        <apply>
+
+          <li Class="XmlExtensions.PatchOperationSafeAdd">
+            <xpath>/Defs/ThingDef[  @Name = "ReinforcedWallBase"
+                               or defName = "WDReinforcedDoor"
+                               or defName = "WDReinforcedAutodoor" ]</xpath>
+            <value>
+              <costList>
+                <Uranium>{reinforcedWallsUraniumCost}</Uranium>
               </costList>
             </value>
           </li>

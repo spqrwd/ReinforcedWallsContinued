@@ -29,4 +29,17 @@ Refactored, rebalanced, and enhanced the original mod by NECEROS.
 </content>
   </HugsLib.UpdateFeatureDef>
 
+  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+    <defName>ReinforcedWallsContinued_1_3_0</defName>
+    <assemblyVersion>1.3.0</assemblyVersion>
+    <content>Construction skill prerequisite is now set to level 5.|
+Updated some descriptions in mod settings.|
+|
+Added mod settings for the following (disabled by default):|
+- An option to enable / disable woody stuff as base construction material|
+- More optional extra construction materials (Devilstrand and Uranium)|
+- [WD] Reinforced Doors mod integration|
+</content>
+  </HugsLib.UpdateFeatureDef>
+
 </Defs>

@@ -44,7 +44,7 @@
                     <color>(163,177,188)</color>
                   </li>
                   <li Class="XmlExtensions.Setting.Text">
-                    <text>ENABLED: Unlocking the research project requires the hi-tech research bench.</text>
+                    <text>ENABLED: The research project can only be unlocked with the hi-tech research bench.</text>
                   </li>
                   <li Class="XmlExtensions.Setting.SetColor"/>
                 </caseTrue>
@@ -100,14 +100,14 @@
                 <key>reinforcedWallsBaseHitPoints</key>
                 <defaultValue>900</defaultValue>
                 <min>1</min>
-                <max>4000</max>
-                <label>Wall base hitpoints  (default: 900)</label>
+                <max>9999</max>
+                <label>Wall base hit points  (default: 900)</label>
               </li>
               <li Class="XmlExtensions.Setting.SetColor">
                 <color>(163,177,188)</color>
               </li>
               <li Class="XmlExtensions.Setting.Text">
-                <text>Adjust the wall's maximum base hitpoints. For reference, the value for vanilla walls is 300.</text>
+                <text>Adjust the wall's maximum base hit points. For reference, the value for vanilla walls is 300.</text>
               </li>
               <li Class="XmlExtensions.Setting.SetColor"/>
 
@@ -115,7 +115,7 @@
 
               <li Class="XmlExtensions.Setting.GapLine"/>
               <li Class="XmlExtensions.Setting.Numeric">
-                <key>reinforcedWallsStuffCostCount</key>
+                <key>reinforcedWallsCostStuffCount</key>
                 <defaultValue>15</defaultValue>
                 <min>1</min>
                 <max>99</max>
@@ -125,13 +125,64 @@
                 <color>(163,177,188)</color>
               </li>
               <li Class="XmlExtensions.Setting.Text">
-                <text>Set the amount of base material (metal/stone) required for construction.</text>
+                <text>Set the amount of base material (woody/stony/metallic) required for construction.</text>
               </li>
               <li Class="XmlExtensions.Setting.SetColor"/>
+              <li Class="XmlExtensions.Setting.Gap">
+                <spacing>6</spacing>
+              </li>
+
+              <!-- Woody base construction material -->
+
+              <li Class="XmlExtensions.Setting.Checkbox">
+                <key>reinforcedWallsStuffCategoriesWoodyToggle</key>
+                <defaultValue>False</defaultValue>
+                <label>Enable / disable woody stuff as base construction material.</label>
+              </li>
+              <li Class="XmlExtensions.Setting.ToggleableSettings">
+                <key>reinforcedWallsStuffCategoriesWoodyToggle</key>
+
+                <caseFalse>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>DISABLED: Wood will not be available as a construction material for reinforced walls/doors.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseFalse>
+
+                <caseTrue>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>ENABLED: Wood can be used as normally for constructing reinforced walls/doors.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseTrue>
+              </li>
+
+              <!-- Extra materials requirement settings -->
 
               <li Class="XmlExtensions.Setting.GapLine"/>
+              <li Class="XmlExtensions.Setting.Text">
+                <text>Extra Construction Materials</text>
+                <font>Small</font>
+                <anchor>Middle</anchor>
+              </li>
+              <li Class="XmlExtensions.Setting.SetColor">
+                <color>(163,177,188)</color>
+              </li>
+              <li Class="XmlExtensions.Setting.Text">
+                <text>An optional set of extra materials to be added to the construction cost. You can choose whatever combination suits your playstyle, or simply disable all of them.</text>
+              </li>
+              <li Class="XmlExtensions.Setting.SetColor"/>
+              <li Class="XmlExtensions.Setting.Gap">
+                <spacing>6</spacing>
+              </li>
 
-              <!-- Hyperweave requirement setting -->
+              <!-- Extra: Hyperweave -->
 
               <li Class="XmlExtensions.Setting.Checkbox">
                 <key>reinforcedWallsHyperweaveToggle</key>
@@ -168,6 +219,88 @@
                   <li Class="XmlExtensions.Setting.SetColor"/>
                 </caseTrue>
               </li>
+              <li Class="XmlExtensions.Setting.Gap">
+                <spacing>4</spacing>
+              </li>
+
+              <!-- Extra: Devilstrand -->
+
+              <li Class="XmlExtensions.Setting.Checkbox">
+                <key>reinforcedWallsDevilstrandToggle</key>
+                <defaultValue>False</defaultValue>
+                <label>Requires Devilstrand</label>
+              </li>
+              <li Class="XmlExtensions.Setting.ToggleableSettings">
+                <key>reinforcedWallsDevilstrandToggle</key>
+
+                <caseFalse>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Enables adding Devilstrand to the construction cost.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseFalse>
+
+                <caseTrue>
+                  <li Class="XmlExtensions.Setting.Numeric">
+                    <key>reinforcedWallsDevilstrandCost</key>
+                    <defaultValue>5</defaultValue>
+                    <min>1</min>
+                    <max>99</max>
+                    <label>Amount needed  (default: 5)</label>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Set the amount of Devilstrand required for construction.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseTrue>
+              </li>
+              <li Class="XmlExtensions.Setting.Gap">
+                <spacing>4</spacing>
+              </li>
+
+              <!-- Extra: Uranium -->
+
+              <li Class="XmlExtensions.Setting.Checkbox">
+                <key>reinforcedWallsUraniumToggle</key>
+                <defaultValue>False</defaultValue>
+                <label>Requires Uranium</label>
+              </li>
+              <li Class="XmlExtensions.Setting.ToggleableSettings">
+                <key>reinforcedWallsUraniumToggle</key>
+
+                <caseFalse>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Enables adding Uranium to the construction cost.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseFalse>
+
+                <caseTrue>
+                  <li Class="XmlExtensions.Setting.Numeric">
+                    <key>reinforcedWallsUraniumCost</key>
+                    <defaultValue>5</defaultValue>
+                    <min>1</min>
+                    <max>99</max>
+                    <label>Amount needed  (default: 5)</label>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Set the amount of Uranium required for construction.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseTrue>
+              </li>
 
               <!-- [WD] Reinforced Doors integration -->
 
@@ -175,7 +308,7 @@
               <li Class="XmlExtensions.Setting.Checkbox">
                 <key>reinforcedWallsWDReinforcedDoorsIntegationToggle</key>
                 <defaultValue>False</defaultValue>
-                <label>Enable [WD] Reinforced Doors integration</label>
+                <label>Enable [WD] Reinforced Doors mod integration</label>
               </li>
               <li Class="XmlExtensions.Setting.ToggleableSettings">
                 <key>reinforcedWallsWDReinforcedDoorsIntegationToggle</key>
@@ -184,13 +317,43 @@
                 </caseFalse>
 
                 <caseTrue>
+                  <li Class="XmlExtensions.Setting.Gap">
+                    <spacing>2</spacing>
+                  </li>
                   <li Class="XmlExtensions.Setting.SetColor">
                     <color>(163,177,188)</color>
                   </li>
                   <li Class="XmlExtensions.Setting.Text">
-                    <text>To be implemented... Sorry, this setting does nothing yet :P</text>
+                    <text>The following changes will be applied to the [WD] Reinforced Doors mod (if present):
+- The research project added by this mod is also required to unlock both reinforced doors.
+- Same extra material requirements set above are added to the doors' construction cost.
+- Reinforced doors get the same damage resistance multipliers as the reinforced walls.
+- Reinforced doors maximum base hit points are increased.
+- Flammability factor is set to match that of the walls.
+</text>
                   </li>
                   <li Class="XmlExtensions.Setting.SetColor"/>
+
+                  <!-- Door base material cost settings -->
+
+                  <li Class="XmlExtensions.Setting.Gap">
+                    <spacing>4</spacing>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Numeric">
+                    <key>reinforcedWallsWDReinforcedAutoDoorsComponentsCostCount</key>
+                    <defaultValue>2</defaultValue>
+                    <min>1</min>
+                    <max>9</max>
+                    <label>Components required  (default: 2)</label>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Set the amount of components required for the autodoor construction.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+
                 </caseTrue>
               </li>
 

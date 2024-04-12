@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>[WD] Reinforced Doors</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Normal</success>
+          <operations>
+
+            <li Class="XmlExtensions.OptionalPatch">
+              <modId>crewd.reinforcedwallscontinued</modId>
+              <key>reinforcedWallsWDReinforcedDoorsIntegationToggle</key>
+              <defaultValue>false</defaultValue>
+              <caseTrue>
+
+                <li Class="PatchOperationReplace">
+                  <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/label</xpath>
+                  <value>
+                    <label>reinforced structures</label>
+                  </value>
+                </li>
+
+                <!-- Research description change -->
+
+                <li Class="PatchOperationConditional">
+                  <xpath>/Defs/ThingDef[defName="HeavyReinforcedEmbrasure"]</xpath>
+                  <match Class="PatchOperationReplace">
+                    <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
+                    <value>
+                      <description>Expensive, reinforced walls, embrasures, and doors that are resistant to all forms of damage.</description>
+                    </value>
+                  </match>
+                  <nomatch Class="PatchOperationReplace">
+                    <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
+                    <value>
+                      <description>Expensive, reinforced walls and doors that are resistant to all forms of damage.</description>
+                    </value>
+                  </nomatch>
+                </li>
+
+                <!-- Definition updates -->
+
+                <li Class="XmlExtensions.PatchOperationSafeAdd">
+                  <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>
+                  <value>
+                    <researchPrerequisites>
+                      <li>ReinforcedWalls</li>
+                    </researchPrerequisites>
+                    <damageMultipliers Inherit="False">
+                      <li>
+                        <damageDef>Bomb</damageDef>
+                        <multiplier>0.75</multiplier>
+                      </li>
+                      <li>
+                        <damageDef>Thump</damageDef>
+                        <multiplier>0.75</multiplier>
+                      </li>
+                      <li>
+                        <damageDef>Demolish</damageDef>
+                        <multiplier>0.65</multiplier>
+                      </li>
+                      <li>
+                        <damageDef>Mining</damageDef>
+                        <multiplier>0.35</multiplier>
+                      </li>
+                      <li>
+                        <damageDef>Bullet</damageDef>
+                        <multiplier>0.30</multiplier>
+                      </li>
+                      <li>
+                        <damageDef>ArrowHighVelocity</damageDef>
+                        <multiplier>0.20</multiplier>
+                      </li>
+                      <li>
+                        <damageDef>Arrow</damageDef>
+                        <multiplier>0.15</multiplier>
+                      </li>
+                    </damageMultipliers>
+                  </value>
+                </li>
+
+                <li Class="XmlExtensions.PatchOperationReplace">
+                  <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]/statBases</xpath>
+                  <value>
+                    <statBases>
+                      <MaxHitPoints>480</MaxHitPoints>
+                      <Flammability>0.25</Flammability>
+                    </statBases>
+                  </value>
+                </li>
+
+                <!-- Enable / disable wooden doors -->
+
+                <li Class="XmlExtensions.OptionalPatch">
+                  <modId>crewd.reinforcedwallscontinued</modId>
+                  <key>reinforcedWallsStuffCategoriesWoodyToggle</key>
+                  <defaultValue>false</defaultValue>
+                  <caseFalse>
+
+                    <li Class="XmlExtensions.PatchOperationAdd">
+                      <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>
+                      <value>
+                        <stuffCategories Inherit="False">
+                          <li>Metallic</li>
+                          <li>Stony</li>
+                        </stuffCategories>
+                      </value>
+                    </li>
+
+                  </caseFalse>
+                </li>
+
+                <!-- Autodoor components cost count -->
+
+                <li Class="XmlExtensions.UseSetting">
+                  <modId>crewd.reinforcedwallscontinued</modId>
+                  <key>reinforcedWallsWDReinforcedAutoDoorsComponentsCostCount</key>
+                  <defaultValue>2</defaultValue>
+                  <apply>
+
+                    <li Class="XmlExtensions.PatchOperationReplace">
+                      <xpath>/Defs/ThingDef[defName = "WDReinforcedAutodoor"]/costList/ComponentIndustrial</xpath>
+                      <value>
+                        <ComponentIndustrial>{reinforcedWallsWDReinforcedAutoDoorsComponentsCostCount}</ComponentIndustrial>
+                      </value>
+                    </li>
+
+                  </apply>
+                </li>
+
+
+
+              </caseTrue>
+            </li>
+
+          </operations>
+        </match>
+      </Operation>
+
+</Patch>

@@ -8,10 +8,6 @@
       <Flammability>0.25</Flammability>
     </statBases>
     <costStuffCount>15</costStuffCount>
-    <stuffCategories Inherit="False">
-      <li>Metallic</li>
-      <li>Stony</li>
-    </stuffCategories>
     <costList Inherit="False" />
     <building>
       <relatedBuildCommands>
@@ -53,6 +49,7 @@
     <researchPrerequisites>
       <li>ReinforcedWalls</li>
     </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
 
   <ThingDef ParentName="ReinforcedWallBase">

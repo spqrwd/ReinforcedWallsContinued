@@ -4,7 +4,7 @@
   <name>Reinforced Walls (Continued)</name>
   <author>crewd</author>
   <packageId>crewd.reinforcedwallscontinued</packageId>
-  <modVersion IgnoreIfNoMatchingField="True">1.2.0</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.3.0</modVersion>
   <url>https://steamcommunity.com/workshop/filedetails/?id=3215305656</url>
   <supportedVersions>
     <li>1.4</li>
@@ -46,6 +46,7 @@ All credit for the idea and used wall artwork goes to the original mod creator, 
   </modDependencies>
 
   <loadAfter>
+    <li>Wemd.ReinforcedDoors</li>
     <li>imranfish.xmlextensions</li>
   </loadAfter>
 
