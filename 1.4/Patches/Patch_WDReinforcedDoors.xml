@@ -130,7 +130,106 @@
                   </apply>
                 </li>
 
+                <!-- Extra materials to construction cost -->
 
+                <li Class="XmlExtensions.OptionalPatch">
+                  <modId>crewd.reinforcedwallscontinued</modId>
+                  <key>reinforcedWallsWDReinforcedDoorsExtraMaterialsRequirementToggle</key>
+                  <defaultValue>true</defaultValue>
+                  <caseTrue>
+
+                    <!-- Hyperweave material cost count -->
+
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                      <modId>crewd.reinforcedwallscontinued</modId>
+                      <key>reinforcedWallsHyperweaveToggle</key>
+                      <defaultValue>true</defaultValue>
+                      <caseTrue>
+
+                        <Operation Class="XmlExtensions.UseSetting">
+                          <modId>crewd.reinforcedwallscontinued</modId>
+                          <key>reinforcedWallsHyperweaveCost</key>
+                          <defaultValue>5</defaultValue>
+                          <apply>
+
+                            <li Class="XmlExtensions.PatchOperationSafeAdd">
+                              <xpath>/Defs/ThingDef[ defName = "WDReinforcedDoor"
+                                                  or defName = "WDReinforcedAutodoor" ]</xpath>
+                              <value>
+                                <costList>
+                                  <Hyperweave>{reinforcedWallsHyperweaveCost}</Hyperweave>
+                                </costList>
+                              </value>
+                            </li>
+
+                          </apply>
+                        </Operation>
+
+                      </caseTrue>
+                    </Operation>
+
+                    <!-- Devilstrand material cost count -->
+
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                      <modId>crewd.reinforcedwallscontinued</modId>
+                      <key>reinforcedWallsDevilstrandToggle</key>
+                      <defaultValue>false</defaultValue>
+                      <caseTrue>
+
+                        <Operation Class="XmlExtensions.UseSetting">
+                          <modId>crewd.reinforcedwallscontinued</modId>
+                          <key>reinforcedWallsDevilstrandCost</key>
+                          <defaultValue>5</defaultValue>
+                          <apply>
+
+                            <li Class="XmlExtensions.PatchOperationSafeAdd">
+                              <xpath>/Defs/ThingDef[ defName = "WDReinforcedDoor"
+                                                  or defName = "WDReinforcedAutodoor" ]</xpath>
+                              <value>
+                                <costList>
+                                  <DevilstrandCloth>{reinforcedWallsDevilstrandCost}</DevilstrandCloth>
+                                </costList>
+                              </value>
+                            </li>
+
+                          </apply>
+                        </Operation>
+
+                      </caseTrue>
+                    </Operation>
+
+                    <!-- Uranium material cost count -->
+
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                      <modId>crewd.reinforcedwallscontinued</modId>
+                      <key>reinforcedWallsUraniumToggle</key>
+                      <defaultValue>false</defaultValue>
+                      <caseTrue>
+
+                        <Operation Class="XmlExtensions.UseSetting">
+                          <modId>crewd.reinforcedwallscontinued</modId>
+                          <key>reinforcedWallsUraniumCost</key>
+                          <defaultValue>5</defaultValue>
+                          <apply>
+
+                            <li Class="XmlExtensions.PatchOperationSafeAdd">
+                              <xpath>/Defs/ThingDef[ defName = "WDReinforcedDoor"
+                                                  or defName = "WDReinforcedAutodoor" ]</xpath>
+                              <value>
+                                <costList>
+                                  <Uranium>{reinforcedWallsUraniumCost}</Uranium>
+                                </costList>
+                              </value>
+                            </li>
+
+                          </apply>
+                        </Operation>
+
+                      </caseTrue>
+                    </Operation>
+
+                </caseTrue>
+              </li>
 
               </caseTrue>
             </li>

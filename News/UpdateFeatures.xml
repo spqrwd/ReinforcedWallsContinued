@@ -42,4 +42,13 @@ Added mod settings for the following (disabled by default):|
 </content>
   </HugsLib.UpdateFeatureDef>
 
+  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+    <defName>ReinforcedWallsContinued_1_4_0</defName>
+    <assemblyVersion>1.4.0</assemblyVersion>
+    <content>Updates to the [WD] Reinforced Doors integration:|
+- Added a toggle to enable/disable the extra construction materials cost|
+- Fixed a bug where the extra construction materials were added to the reinforced doors even if the integration toggle was disabled
+</content>
+  </HugsLib.UpdateFeatureDef>
+
 </Defs>

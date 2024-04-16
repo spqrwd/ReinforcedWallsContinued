@@ -173,9 +173,7 @@
         <apply>
 
           <li Class="XmlExtensions.PatchOperationSafeAdd">
-            <xpath>/Defs/ThingDef[  @Name = "ReinforcedWallBase"
-                               or defName = "WDReinforcedDoor"
-                               or defName = "WDReinforcedAutodoor" ]</xpath>
+            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
             <value>
               <costList>
                 <Hyperweave>{reinforcedWallsHyperweaveCost}</Hyperweave>
@@ -204,9 +202,7 @@
         <apply>
 
           <li Class="XmlExtensions.PatchOperationSafeAdd">
-            <xpath>/Defs/ThingDef[  @Name = "ReinforcedWallBase"
-                               or defName = "WDReinforcedDoor"
-                               or defName = "WDReinforcedAutodoor" ]</xpath>
+            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
             <value>
               <costList>
                 <DevilstrandCloth>{reinforcedWallsDevilstrandCost}</DevilstrandCloth>
@@ -235,9 +231,7 @@
         <apply>
 
           <li Class="XmlExtensions.PatchOperationSafeAdd">
-            <xpath>/Defs/ThingDef[  @Name = "ReinforcedWallBase"
-                               or defName = "WDReinforcedDoor"
-                               or defName = "WDReinforcedAutodoor" ]</xpath>
+            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
             <value>
               <costList>
                 <Uranium>{reinforcedWallsUraniumCost}</Uranium>

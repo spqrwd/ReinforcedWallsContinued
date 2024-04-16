@@ -326,13 +326,43 @@
                   <li Class="XmlExtensions.Setting.Text">
                     <text>The following changes will be applied to the [WD] Reinforced Doors mod (if present):
 - The research project added by this mod is also required to unlock both reinforced doors.
-- Same extra material requirements set above are added to the doors' construction cost.
 - Reinforced doors get the same damage resistance multipliers as the reinforced walls.
 - Reinforced doors maximum base hit points are increased.
 - Flammability factor is set to match that of the walls.
 </text>
                   </li>
                   <li Class="XmlExtensions.Setting.SetColor"/>
+
+                  <!-- Extra materials requirement setting -->
+
+                  <li Class="XmlExtensions.Setting.Checkbox">
+                    <key>reinforcedWallsWDReinforcedDoorsExtraMaterialsRequirementToggle</key>
+                    <defaultValue>True</defaultValue>
+                    <label>Enable / disable the extra materials to doors construction cost</label>
+                  </li>
+                  <li Class="XmlExtensions.Setting.ToggleableSettings">
+                    <key>reinforcedWallsWDReinforcedDoorsExtraMaterialsRequirementToggle</key>
+
+                    <caseFalse>
+                      <li Class="XmlExtensions.Setting.SetColor">
+                        <color>(163,177,188)</color>
+                      </li>
+                      <li Class="XmlExtensions.Setting.Text">
+                        <text>DISABLED: The reinforced doors construction costs are unchanged from default.</text>
+                      </li>
+                      <li Class="XmlExtensions.Setting.SetColor"/>
+                    </caseFalse>
+
+                    <caseTrue>
+                      <li Class="XmlExtensions.Setting.SetColor">
+                        <color>(163,177,188)</color>
+                      </li>
+                      <li Class="XmlExtensions.Setting.Text">
+                        <text>ENABLED: The extra construction materials set above also apply to the reinforced doors.</text>
+                      </li>
+                      <li Class="XmlExtensions.Setting.SetColor"/>
+                    </caseTrue>
+                  </li>
 
                   <!-- Door base material cost settings -->
 
