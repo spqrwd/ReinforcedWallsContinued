@@ -133,7 +133,6 @@
         </apply>
       </Operation>
 
-
       <!-- Enable / disable wooden doors -->
 
       <Operation Class="XmlExtensions.OptionalPatch">
@@ -158,12 +157,70 @@
     </caseTrue>
   </Operation>
 
+    <!-- Steel material cost count -->
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+      <modId>crewd.reinforcedwallscontinued</modId>
+      <key>reinforcedWallsSteelToggle</key>
+      <defaultValue>true</defaultValue>
+      <caseTrue>
+
+        <Operation Class="XmlExtensions.UseSetting">
+          <modId>crewd.reinforcedwallscontinued</modId>
+          <key>reinforcedWallsSteelCost</key>
+          <defaultValue>5</defaultValue>
+          <apply>
+
+            <li Class="XmlExtensions.PatchOperationSafeAdd">
+              <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+              <value>
+                <costList>
+                  <Steel>{reinforcedWallsSteelCost}</Steel>
+                </costList>
+              </value>
+            </li>
+
+          </apply>
+        </Operation>
+
+      </caseTrue>
+    </Operation>
+
+  <!-- Uranium material cost count -->
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedWallsUraniumToggle</key>
+    <defaultValue>false</defaultValue>
+    <caseTrue>
+
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>crewd.reinforcedwallscontinued</modId>
+        <key>reinforcedWallsUraniumCost</key>
+        <defaultValue>5</defaultValue>
+        <apply>
+
+          <li Class="XmlExtensions.PatchOperationSafeAdd">
+            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+            <value>
+              <costList>
+                <Uranium>{reinforcedWallsUraniumCost}</Uranium>
+              </costList>
+            </value>
+          </li>
+
+        </apply>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
+
   <!-- Hyperweave material cost count -->
 
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>crewd.reinforcedwallscontinued</modId>
     <key>reinforcedWallsHyperweaveToggle</key>
-    <defaultValue>true</defaultValue>
+    <defaultValue>false</defaultValue>
     <caseTrue>
 
       <Operation Class="XmlExtensions.UseSetting">
@@ -206,35 +263,6 @@
             <value>
               <costList>
                 <DevilstrandCloth>{reinforcedWallsDevilstrandCost}</DevilstrandCloth>
-              </costList>
-            </value>
-          </li>
-
-        </apply>
-      </Operation>
-
-    </caseTrue>
-  </Operation>
-
-  <!-- Uranium material cost count -->
-
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>crewd.reinforcedwallscontinued</modId>
-    <key>reinforcedWallsUraniumToggle</key>
-    <defaultValue>false</defaultValue>
-    <caseTrue>
-
-      <Operation Class="XmlExtensions.UseSetting">
-        <modId>crewd.reinforcedwallscontinued</modId>
-        <key>reinforcedWallsUraniumCost</key>
-        <defaultValue>5</defaultValue>
-        <apply>
-
-          <li Class="XmlExtensions.PatchOperationSafeAdd">
-            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
-            <value>
-              <costList>
-                <Uranium>{reinforcedWallsUraniumCost}</Uranium>
               </costList>
             </value>
           </li>

@@ -182,11 +182,93 @@
                 <spacing>6</spacing>
               </li>
 
+              <!-- Extra: Steel -->
+
+              <li Class="XmlExtensions.Setting.Checkbox">
+                <key>reinforcedWallsSteelToggle</key>
+                <defaultValue>True</defaultValue>
+                <label>Requires Steel</label>
+              </li>
+              <li Class="XmlExtensions.Setting.ToggleableSettings">
+                <key>reinforcedWallsSteelToggle</key>
+
+                <caseFalse>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Enables adding Steel to the construction cost.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseFalse>
+
+                <caseTrue>
+                  <li Class="XmlExtensions.Setting.Numeric">
+                    <key>reinforcedWallsSteelCost</key>
+                    <defaultValue>5</defaultValue>
+                    <min>1</min>
+                    <max>99</max>
+                    <label>Amount needed  (default: 5)</label>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Set the amount of Steel required for construction.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseTrue>
+              </li>
+              <li Class="XmlExtensions.Setting.Gap">
+                <spacing>4</spacing>
+              </li>
+
+              <!-- Extra: Uranium -->
+
+              <li Class="XmlExtensions.Setting.Checkbox">
+                <key>reinforcedWallsUraniumToggle</key>
+                <defaultValue>False</defaultValue>
+                <label>Requires Uranium</label>
+              </li>
+              <li Class="XmlExtensions.Setting.ToggleableSettings">
+                <key>reinforcedWallsUraniumToggle</key>
+
+                <caseFalse>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Enables adding Uranium to the construction cost.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseFalse>
+
+                <caseTrue>
+                  <li Class="XmlExtensions.Setting.Numeric">
+                    <key>reinforcedWallsUraniumCost</key>
+                    <defaultValue>5</defaultValue>
+                    <min>1</min>
+                    <max>99</max>
+                    <label>Amount needed  (default: 5)</label>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>Set the amount of Uranium required for construction.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseTrue>
+              </li>
+              <li Class="XmlExtensions.Setting.Gap">
+                <spacing>4</spacing>
+              </li>
+
               <!-- Extra: Hyperweave -->
 
               <li Class="XmlExtensions.Setting.Checkbox">
                 <key>reinforcedWallsHyperweaveToggle</key>
-                <defaultValue>True</defaultValue>
+                <defaultValue>False</defaultValue>
                 <label>Requires Hyperweave</label>
               </li>
               <li Class="XmlExtensions.Setting.ToggleableSettings">
@@ -256,47 +338,6 @@
                   </li>
                   <li Class="XmlExtensions.Setting.Text">
                     <text>Set the amount of Devilstrand required for construction.</text>
-                  </li>
-                  <li Class="XmlExtensions.Setting.SetColor"/>
-                </caseTrue>
-              </li>
-              <li Class="XmlExtensions.Setting.Gap">
-                <spacing>4</spacing>
-              </li>
-
-              <!-- Extra: Uranium -->
-
-              <li Class="XmlExtensions.Setting.Checkbox">
-                <key>reinforcedWallsUraniumToggle</key>
-                <defaultValue>False</defaultValue>
-                <label>Requires Uranium</label>
-              </li>
-              <li Class="XmlExtensions.Setting.ToggleableSettings">
-                <key>reinforcedWallsUraniumToggle</key>
-
-                <caseFalse>
-                  <li Class="XmlExtensions.Setting.SetColor">
-                    <color>(163,177,188)</color>
-                  </li>
-                  <li Class="XmlExtensions.Setting.Text">
-                    <text>Enables adding Uranium to the construction cost.</text>
-                  </li>
-                  <li Class="XmlExtensions.Setting.SetColor"/>
-                </caseFalse>
-
-                <caseTrue>
-                  <li Class="XmlExtensions.Setting.Numeric">
-                    <key>reinforcedWallsUraniumCost</key>
-                    <defaultValue>5</defaultValue>
-                    <min>1</min>
-                    <max>99</max>
-                    <label>Amount needed  (default: 5)</label>
-                  </li>
-                  <li Class="XmlExtensions.Setting.SetColor">
-                    <color>(163,177,188)</color>
-                  </li>
-                  <li Class="XmlExtensions.Setting.Text">
-                    <text>Set the amount of Uranium required for construction.</text>
                   </li>
                   <li Class="XmlExtensions.Setting.SetColor"/>
                 </caseTrue>
