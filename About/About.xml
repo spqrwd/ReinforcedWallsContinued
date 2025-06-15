@@ -4,17 +4,18 @@
   <name>Reinforced Walls (Continued)</name>
   <author>crewd</author>
   <packageId>crewd.reinforcedwallscontinued</packageId>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.0</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.6.0</modVersion>
   <url>https://steamcommunity.com/workshop/filedetails/?id=3215305656</url>
   <supportedVersions>
     <li>1.4</li>
     <li>1.5</li>
+    <li>1.6</li>
   </supportedVersions>
   <description>Continuation of the original mod by NECEROS: https://steamcommunity.com/sharedfiles/filedetails/?id=1929389479
 
-Adds expensive heavy reinforced walls and embrasures, with triple base hit points over vanilla walls. They also have a significant damage resistance against breach weapons, mining, thump cannons, basic projectiles, and explosions. Unlocked by researching one new industrial level technology, which (by default) has a pre-requisite to Microelectronics and requires a hi-tech research bench.
+Several aspects of the mod can be tweaked in the mod settings if you have Imranfish's XML Extensions enabled.
 
-Several aspects of the mod can be tweaked in the mod settings, powered by XML Extensions (required mod dependency).
+Adds expensive heavy reinforced walls and embrasures, with triple base hit points over vanilla walls. They also have a significant damage resistance against breach weapons, mining, thump cannons, basic projectiles, and explosions. Unlocked by researching one new industrial level technology, which (by default) requires a hi-tech research bench to complete. Also adds a new buffed version of the security door if you have the Anomaly DLC enabled.
 
 Should work with all woody, stony, and metallic materials, even modded if they belong to one of those categories.
 
@@ -36,16 +37,19 @@ All credit for the idea and used wall artwork goes to the original mod creator, 
     <li>neceros.reinforcedwalls</li>
   </incompatibleWith>
 
-  <modDependencies>
-    <li>
-      <packageId>imranfish.xmlextensions</packageId>
-      <displayName>XML Extensions</displayName>
-      <downloadUrl>https://github.com/15adhami/XmlExtensions/releases</downloadUrl>
-      <steamWorkshopUrl>steam://url/CommunityFilePage/2574315206</steamWorkshopUrl>
-    </li>
-  </modDependencies>
+  <modDependenciesByVersion>
+    <v1.4>
+      <li>
+        <packageId>imranfish.xmlextensions</packageId>
+        <displayName>XML Extensions</displayName>
+        <downloadUrl>https://github.com/15adhami/XmlExtensions/releases</downloadUrl>
+        <steamWorkshopUrl>steam://url/CommunityFilePage/2574315206</steamWorkshopUrl>
+      </li>
+    </v1.4>
+  </modDependenciesByVersion>
 
   <loadAfter>
+    <li>Oganesson.simple.gate</li>
     <li>Wemd.ReinforcedDoors</li>
     <li>imranfish.xmlextensions</li>
   </loadAfter>

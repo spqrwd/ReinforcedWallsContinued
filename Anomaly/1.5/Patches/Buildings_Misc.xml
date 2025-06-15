@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="SecurityDoor"]</xpath>
+    <value>
+      <uiOrder>2011</uiOrder>
+      <!-- <designatorDropdown>SecurityDoors</designatorDropdown> -->
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
+    <value>
+      <li>ReinforcedSecurityDoor</li>
+    </value>
+  </Operation>
+
+</Patch>

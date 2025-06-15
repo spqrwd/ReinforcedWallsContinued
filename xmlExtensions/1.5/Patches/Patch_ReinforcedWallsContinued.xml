@@ -6,17 +6,14 @@
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>crewd.reinforcedwallscontinued</modId>
     <key>reinforcedWallsResearchRequirementsToggle</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
+    <defaultValue>True</defaultValue>
+    <caseFalse>
 
-      <li Class="PatchOperationAdd">
-        <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]</xpath>
-        <value>
-          <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-        </value>
+      <li Class="PatchOperationRemove">
+        <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/requiredResearchBuilding</xpath>
       </li>
 
-    </caseTrue>
+    </caseFalse>
   </Operation>
 
   <!-- Reinforced Embrasures -->
@@ -24,7 +21,14 @@
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>crewd.reinforcedwallscontinued</modId>
     <key>reinforcedWallsEmbrasuresToggle</key>
-    <defaultValue>true</defaultValue>
+    <defaultValue>True</defaultValue>
+    <caseFalse>
+
+      <Operation Class="PatchOperationRemove">
+        <xpath>/Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]</xpath>
+      </Operation>
+
+    </caseFalse>
     <caseTrue>
 
       <Operation Class="XmlExtensions.AggregateValues">
@@ -47,20 +51,10 @@
             <success>Normal</success>
             <operations>
 
-              <li Class="PatchOperationAdd">
-                <xpath>/Defs</xpath>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]/fillPercent</xpath>
                 <value>
-                  <ThingDef ParentName="ReinforcedWallBase">
-                    <defName>HeavyReinforcedEmbrasure</defName>
-                    <label>heavy reinforced embrasure</label>
-                    <description>A stronger impassable wall, with a tactical opening to shoot through. Reinforced to withstand all forms of damage and direct explosions. Capable of holding up a roof.</description>
-                    <uiIconPath>RWEmbrasureIcon</uiIconPath>
-                    <graphicData>
-                      <texPath>RW_Embrasure</texPath>
-                    </graphicData>
-                    <fillPercent>{reinforcedEmbrasuresFillPercentValue}</fillPercent>
-                    <disableImpassableShotOverConfigError IgnoreIfNoMatchingField="True">true</disableImpassableShotOverConfigError>
-                  </ThingDef>
+                  <fillPercent>{reinforcedEmbrasuresFillPercentValue}</fillPercent>
                 </value>
               </li>
 
@@ -85,7 +79,7 @@
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>crewd.reinforcedwallscontinued</modId>
     <key>reinforcedWallsDummyToggle</key>
-    <defaultValue>true</defaultValue>
+    <defaultValue>True</defaultValue>
     <caseTrue>
 
       <!-- Base hit points -->
@@ -129,7 +123,7 @@
       <Operation Class="XmlExtensions.OptionalPatch">
         <modId>crewd.reinforcedwallscontinued</modId>
         <key>reinforcedWallsStuffCategoriesWoodyToggle</key>
-        <defaultValue>false</defaultValue>
+        <defaultValue>False</defaultValue>
         <caseFalse>
 
           <li Class="XmlExtensions.PatchOperationAdd">
@@ -153,7 +147,7 @@
     <Operation Class="XmlExtensions.OptionalPatch">
       <modId>crewd.reinforcedwallscontinued</modId>
       <key>reinforcedWallsSteelToggle</key>
-      <defaultValue>true</defaultValue>
+      <defaultValue>True</defaultValue>
       <caseTrue>
 
         <Operation Class="XmlExtensions.UseSetting">
@@ -177,12 +171,41 @@
       </caseTrue>
     </Operation>
 
+  <!-- Plasteel material cost count -->
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedWallsPlasteelToggle</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>crewd.reinforcedwallscontinued</modId>
+        <key>reinforcedWallsPlasteelCost</key>
+        <defaultValue>5</defaultValue>
+        <apply>
+
+          <li Class="XmlExtensions.PatchOperationSafeAdd">
+            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+            <value>
+              <costList>
+                <Plasteel>{reinforcedWallsPlasteelCost}</Plasteel>
+              </costList>
+            </value>
+          </li>
+
+        </apply>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
+
   <!-- Uranium material cost count -->
 
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>crewd.reinforcedwallscontinued</modId>
     <key>reinforcedWallsUraniumToggle</key>
-    <defaultValue>false</defaultValue>
+    <defaultValue>False</defaultValue>
     <caseTrue>
 
       <Operation Class="XmlExtensions.UseSetting">
@@ -211,7 +234,7 @@
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>crewd.reinforcedwallscontinued</modId>
     <key>reinforcedWallsHyperweaveToggle</key>
-    <defaultValue>false</defaultValue>
+    <defaultValue>False</defaultValue>
     <caseTrue>
 
       <Operation Class="XmlExtensions.UseSetting">
@@ -240,7 +263,7 @@
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>crewd.reinforcedwallscontinued</modId>
     <key>reinforcedWallsDevilstrandToggle</key>
-    <defaultValue>false</defaultValue>
+    <defaultValue>False</defaultValue>
     <caseTrue>
 
       <Operation Class="XmlExtensions.UseSetting">

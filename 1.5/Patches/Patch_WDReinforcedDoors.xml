@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[WD] Reinforced Doors</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Normal</success>
+      <operations>
+
+        <!-- Research tech label change -->
+
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/label</xpath>
+          <value>
+            <label>reinforced structures</label>
+          </value>
+        </li>
+
+        <!-- Research description change -->
+
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
+          <value>
+            <description>Expensive, reinforced walls, embrasures, and doors that are resistant to all forms of damage.</description>
+          </value>
+        </li>
+
+        <!-- Definition updates -->
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
+          <value>
+            <li>WDReinforcedDoor</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
+          <value>
+            <li>WDReinforcedAutodoor</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>ReinforcedWalls</li>
+            </researchPrerequisites>
+            <damageMultipliers Inherit="False">
+              <li>
+                <damageDef>Bomb</damageDef>
+                <multiplier>0.75</multiplier>
+              </li>
+              <li>
+                <damageDef>Thump</damageDef>
+                <multiplier>0.75</multiplier>
+              </li>
+              <li>
+                <damageDef>Demolish</damageDef>
+                <multiplier>0.65</multiplier>
+              </li>
+              <li>
+                <damageDef>Mining</damageDef>
+                <multiplier>0.35</multiplier>
+              </li>
+              <li>
+                <damageDef>Bullet</damageDef>
+                <multiplier>0.30</multiplier>
+              </li>
+              <li>
+                <damageDef>ArrowHighVelocity</damageDef>
+                <multiplier>0.20</multiplier>
+              </li>
+              <li>
+                <damageDef>Arrow</damageDef>
+                <multiplier>0.15</multiplier>
+              </li>
+            </damageMultipliers>
+          </value>
+        </li>
+
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]/statBases</xpath>
+          <value>
+            <statBases>
+              <MaxHitPoints>350</MaxHitPoints>
+              <Flammability>0.25</Flammability>
+            </statBases>
+          </value>
+        </li>
+
+        <!-- Rebalancing autodoor values to correspond with Anomaly DLC security door -->
+
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "WDReinforcedAutodoor"]/costList/ComponentIndustrial</xpath>
+          <value>
+            <ComponentIndustrial>2</ComponentIndustrial>
+          </value>
+        </li>
+
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "WDReinforcedAutodoor"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+          <value>
+            <basePowerConsumption>50</basePowerConsumption>
+          </value>
+        </li>
+
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

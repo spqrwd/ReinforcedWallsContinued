@@ -4,13 +4,14 @@
   <ResearchProjectDef>
     <defName>ReinforcedWalls</defName>
     <label>reinforced walls</label>
-    <description>Expensive, reinforced walls that are resistant to all forms of damage.</description>
-    <baseCost>3000</baseCost>
+    <description>Expensive, reinforced walls and embrasures that are resistant to all forms of damage.</description>
+    <baseCost>2000</baseCost>
     <techLevel>Industrial</techLevel>
     <hiddenPrerequisites>
       <li>Smithing</li>
       <li>Stonecutting</li>
     </hiddenPrerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
     <researchViewX>1.00</researchViewX>
     <researchViewY>4.90</researchViewY>
   </ResearchProjectDef>

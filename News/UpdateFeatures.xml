@@ -58,4 +58,14 @@ Added mod settings for the following (disabled by default):|
 </content>
   </HugsLib.UpdateFeatureDef>
 
+  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+    <defName>ReinforcedWallsContinued_1_6_0</defName>
+    <assemblyVersion>1.6.0</assemblyVersion>
+    <content>Updated for Rimworld 1.6.|
+- Can now be used in RW 1.5 and 1.6 also without XML Extensions, by dropping support for settings and just using default values|
+- Added plasteel as an optional extra construction material in settings|
+- Added a new buffed version of the security door if you have the Anomaly DLC enabled
+</content>
+  </HugsLib.UpdateFeatureDef>
+
 </Defs>
