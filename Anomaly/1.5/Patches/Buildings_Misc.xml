@@ -2,7 +2,7 @@
 <Patch>
 
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/ThingDef[defName="SecurityDoor"]</xpath>
+    <xpath>Defs/ThingDef[defName="SecurityDoor"]</xpath>
     <value>
       <uiOrder>2011</uiOrder>
       <!-- <designatorDropdown>SecurityDoors</designatorDropdown> -->
@@ -10,7 +10,7 @@
   </Operation>
 
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
+    <xpath>Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
     <value>
       <li>ReinforcedSecurityDoor</li>
     </value>

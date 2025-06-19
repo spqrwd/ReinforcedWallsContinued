@@ -12,7 +12,7 @@
         <!-- Research tech label change -->
 
         <li Class="PatchOperationReplace">
-          <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/label</xpath>
+          <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/label</xpath>
           <value>
             <label>reinforced structures</label>
           </value>
@@ -21,7 +21,7 @@
         <!-- Research description change -->
 
         <li Class="PatchOperationReplace">
-          <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
+          <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
           <value>
             <description>Expensive, reinforced walls, embrasures, and doors that are resistant to all forms of damage.</description>
           </value>
@@ -30,21 +30,21 @@
         <!-- Definition updates -->
 
         <li Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
+          <xpath>Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
           <value>
             <li>WDReinforcedDoor</li>
           </value>
         </li>
 
         <li Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
+          <xpath>Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
           <value>
             <li>WDReinforcedAutodoor</li>
           </value>
         </li>
 
         <li Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>
+          <xpath>Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>
           <value>
             <researchPrerequisites>
               <li>ReinforcedWalls</li>
@@ -83,7 +83,7 @@
         </li>
 
         <li Class="PatchOperationReplace">
-          <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]/statBases</xpath>
+          <xpath>Defs/ThingDef[@Name = "WDReinforcedDoorBase"]/statBases</xpath>
           <value>
             <statBases>
               <MaxHitPoints>350</MaxHitPoints>
@@ -95,14 +95,14 @@
         <!-- Rebalancing autodoor values to correspond with Anomaly DLC security door -->
 
         <li Class="PatchOperationReplace">
-          <xpath>/Defs/ThingDef[defName = "WDReinforcedAutodoor"]/costList/ComponentIndustrial</xpath>
+          <xpath>Defs/ThingDef[defName = "WDReinforcedAutodoor"]/costList/ComponentIndustrial</xpath>
           <value>
             <ComponentIndustrial>2</ComponentIndustrial>
           </value>
         </li>
 
         <li Class="PatchOperationReplace">
-          <xpath>/Defs/ThingDef[defName = "WDReinforcedAutodoor"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+          <xpath>Defs/ThingDef[defName = "WDReinforcedAutodoor"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
           <value>
             <basePowerConsumption>50</basePowerConsumption>
           </value>

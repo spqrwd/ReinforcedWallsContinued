@@ -16,7 +16,7 @@
           <caseTrue>
 
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/label</xpath>
+              <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/label</xpath>
               <value>
                 <label>reinforced structures</label>
               </value>
@@ -25,15 +25,15 @@
             <!-- Research description change -->
 
             <li Class="PatchOperationConditional">
-              <xpath>/Defs/ThingDef[defName="HeavyReinforcedEmbrasure"]</xpath>
+              <xpath>Defs/ThingDef[defName="HeavyReinforcedEmbrasure"]</xpath>
               <match Class="PatchOperationReplace">
-                <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
+                <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
                 <value>
                   <description>Expensive, reinforced walls, embrasures, and doors that are resistant to all forms of damage.</description>
                 </value>
               </match>
               <nomatch Class="PatchOperationReplace">
-                <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
+                <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
                 <value>
                   <description>Expensive, reinforced walls and doors that are resistant to all forms of damage.</description>
                 </value>
@@ -43,7 +43,7 @@
             <!-- Definition updates -->
 
             <li Class="XmlExtensions.PatchOperationSafeAdd">
-              <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>
+              <xpath>Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>
               <value>
                 <researchPrerequisites>
                   <li>ReinforcedWalls</li>
@@ -82,7 +82,7 @@
             </li>
 
             <li Class="XmlExtensions.PatchOperationReplace">
-              <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]/statBases</xpath>
+              <xpath>Defs/ThingDef[@Name = "WDReinforcedDoorBase"]/statBases</xpath>
               <value>
                 <statBases>
                   <MaxHitPoints>350</MaxHitPoints>
@@ -94,7 +94,7 @@
             <!-- Rebalancing autodoor to correspond with Anomaly DLC security door -->
 
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName = "WDReinforcedAutodoor"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+              <xpath>Defs/ThingDef[defName = "WDReinforcedAutodoor"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
               <value>
                 <basePowerConsumption>50</basePowerConsumption>
               </value>
@@ -109,7 +109,7 @@
               <caseFalse>
 
                 <li Class="XmlExtensions.PatchOperationAdd">
-                  <xpath>/Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>
+                  <xpath>Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>
                   <value>
                     <stuffCategories Inherit="False">
                       <li>Metallic</li>
@@ -130,7 +130,7 @@
               <apply>
 
                 <li Class="XmlExtensions.PatchOperationReplace">
-                  <xpath>/Defs/ThingDef[defName = "WDReinforcedAutodoor"]/costList/ComponentIndustrial</xpath>
+                  <xpath>Defs/ThingDef[defName = "WDReinforcedAutodoor"]/costList/ComponentIndustrial</xpath>
                   <value>
                     <ComponentIndustrial>{reinforcedWallsWDReinforcedAutoDoorsComponentsCostCount}</ComponentIndustrial>
                   </value>
@@ -162,7 +162,7 @@
                       <apply>
 
                         <li Class="XmlExtensions.PatchOperationSafeAdd">
-                          <xpath>/Defs/ThingDef[ defName = "WDReinforcedDoor"
+                          <xpath>Defs/ThingDef[ defName = "WDReinforcedDoor"
                                               or defName = "WDReinforcedAutodoor" ]</xpath>
                           <value>
                             <costList>
@@ -192,7 +192,7 @@
                       <apply>
 
                         <li Class="XmlExtensions.PatchOperationSafeAdd">
-                          <xpath>/Defs/ThingDef[ defName = "WDReinforcedDoor"
+                          <xpath>Defs/ThingDef[ defName = "WDReinforcedDoor"
                                               or defName = "WDReinforcedAutodoor" ]</xpath>
                           <value>
                             <costList>
@@ -222,7 +222,7 @@
                       <apply>
 
                         <li Class="XmlExtensions.PatchOperationSafeAdd">
-                          <xpath>/Defs/ThingDef[ defName = "WDReinforcedDoor"
+                          <xpath>Defs/ThingDef[ defName = "WDReinforcedDoor"
                                               or defName = "WDReinforcedAutodoor" ]</xpath>
                           <value>
                             <costList>
@@ -252,7 +252,7 @@
                       <apply>
 
                         <li Class="XmlExtensions.PatchOperationSafeAdd">
-                          <xpath>/Defs/ThingDef[ defName = "WDReinforcedDoor"
+                          <xpath>Defs/ThingDef[ defName = "WDReinforcedDoor"
                                               or defName = "WDReinforcedAutodoor" ]</xpath>
                           <value>
                             <costList>

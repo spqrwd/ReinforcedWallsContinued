@@ -10,7 +10,7 @@
     <caseFalse>
 
       <li Class="PatchOperationRemove">
-        <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/requiredResearchBuilding</xpath>
+        <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/requiredResearchBuilding</xpath>
       </li>
 
     </caseFalse>
@@ -25,7 +25,7 @@
     <caseFalse>
 
       <Operation Class="PatchOperationRemove">
-        <xpath>/Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]</xpath>
+        <xpath>Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]</xpath>
       </Operation>
 
     </caseFalse>
@@ -52,14 +52,14 @@
             <operations>
 
               <li Class="PatchOperationReplace">
-                <xpath>/Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]/fillPercent</xpath>
+                <xpath>Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]/fillPercent</xpath>
                 <value>
                   <fillPercent>{reinforcedEmbrasuresFillPercentValue}</fillPercent>
                 </value>
               </li>
 
               <li Class="PatchOperationReplace">
-                <xpath>/Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
+                <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
                 <value>
                   <description>Expensive, reinforced walls and embrasures that are resistant to all forms of damage.</description>
                 </value>
@@ -91,7 +91,7 @@
         <apply>
 
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]/statBases/MaxHitPoints</xpath>
+            <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]/statBases/MaxHitPoints</xpath>
             <value>
               <MaxHitPoints>{reinforcedWallsBaseHitPoints}</MaxHitPoints>
             </value>
@@ -109,7 +109,7 @@
         <apply>
 
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]/costStuffCount</xpath>
+            <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]/costStuffCount</xpath>
             <value>
               <costStuffCount>{reinforcedWallsCostStuffCount}</costStuffCount>
             </value>
@@ -127,7 +127,7 @@
         <caseFalse>
 
           <li Class="XmlExtensions.PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+            <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
             <value>
               <stuffCategories Inherit="False">
                 <li>Metallic</li>
@@ -157,7 +157,7 @@
           <apply>
 
             <li Class="XmlExtensions.PatchOperationSafeAdd">
-              <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+              <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
               <value>
                 <costList>
                   <Steel>{reinforcedWallsSteelCost}</Steel>
@@ -186,7 +186,7 @@
         <apply>
 
           <li Class="XmlExtensions.PatchOperationSafeAdd">
-            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+            <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
             <value>
               <costList>
                 <Plasteel>{reinforcedWallsPlasteelCost}</Plasteel>
@@ -215,7 +215,7 @@
         <apply>
 
           <li Class="XmlExtensions.PatchOperationSafeAdd">
-            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+            <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
             <value>
               <costList>
                 <Uranium>{reinforcedWallsUraniumCost}</Uranium>
@@ -244,7 +244,7 @@
         <apply>
 
           <li Class="XmlExtensions.PatchOperationSafeAdd">
-            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+            <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
             <value>
               <costList>
                 <Hyperweave>{reinforcedWallsHyperweaveCost}</Hyperweave>
@@ -273,7 +273,7 @@
         <apply>
 
           <li Class="XmlExtensions.PatchOperationSafeAdd">
-            <xpath>/Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+            <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
             <value>
               <costList>
                 <DevilstrandCloth>{reinforcedWallsDevilstrandCost}</DevilstrandCloth>
