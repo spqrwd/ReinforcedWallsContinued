@@ -13,14 +13,6 @@
     <costList>
       <Steel>5</Steel>
     </costList>
-    <building>
-      <relatedBuildCommands>
-        <li MayRequire="Oganesson.simple.gate">OgGate</li>
-        <li MayRequire="Wemd.ReinforcedDoors">WDReinforcedDoor</li>
-        <li MayRequire="Wemd.ReinforcedDoors">WDReinforcedAutodoor</li>
-        <li MayRequire="Ludeon.RimWorld.Anomaly">ReinforcedSecurityDoor</li>
-      </relatedBuildCommands>
-    </building>
     <damageMultipliers Inherit="False">
       <li>
         <damageDef>Bomb</damageDef>

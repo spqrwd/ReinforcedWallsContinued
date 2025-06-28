@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedSecurityDoorToggle</key>
+    <defaultValue>True</defaultValue>
+    <caseTrue>
+
+      <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName = "SecurityDoor"]</xpath>
+        <match Class="PatchOperationSequence">
+          <success>Normal</success>
+          <operations>
+
+            <li Class="PatchOperationAttributeAdd">
+              <xpath>Defs/ThingDef[defName = "SecurityDoor"]</xpath>
+              <attribute>Name</attribute>
+              <value>SecurityDoorBase</value>
+            </li>
+
+            <li Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[defName = "SecurityDoor"]</xpath>
+              <value>
+                <uiOrder>2011</uiOrder>
+              </value>
+            </li>
+
+            <li Class="PatchOperationAdd">
+              <xpath>Defs</xpath>
+              <value>
+                <ThingDef ParentName="SecurityDoorBase">
+                  <defName Inherit="false">ReinforcedSecurityDoor</defName>
+                  <label Inherit="false">reinforced security door</label>
+                  <statBases Inherit="false">
+                    <WorkToBuild>9000</WorkToBuild>                        <!-- Multiplied by 1.5 x vanilla -->
+                    <MaxHitPoints>1200</MaxHitPoints>                      <!-- Multiplied by 1.5 x vanilla -->
+                    <Flammability>0</Flammability>
+                  </statBases>
+                  <uiOrder Inherit="false">2012</uiOrder>                  <!-- Placed after vanilla security door -->
+                  <graphicData>
+                    <color Inherit="false">(75,75,75)</color>
+                  </graphicData>
+                  <uiIconColor Inherit="false">(75,75,75)</uiIconColor>
+                  <costList>
+                    <Plasteel Inherit="false">60</Plasteel>
+                    <Bioferrite>15</Bioferrite>
+                  </costList>
+                  <building>
+                    <doorTopGraphic>
+                      <color Inherit="false">(75,75,75)</color>
+                    </doorTopGraphic>
+                    <doorSupportGraphic>
+                      <color Inherit="false">(75,75,75)</color>
+                    </doorSupportGraphic>
+                    <upperMoverGraphic>
+                      <color Inherit="false">(75,75,75)</color>
+                    </upperMoverGraphic>
+                  </building>
+                  <researchPrerequisites>
+                    <li>ReinforcedWalls</li>
+                  </researchPrerequisites>
+                  <constructionSkillPrerequisite Inherit="false">8</constructionSkillPrerequisite>
+                </ThingDef>
+              </value>
+            </li>
+
+            <!-- Add the new security door build command to walls -->
+
+            <li Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
+              <value>
+                <li>ReinforcedSecurityDoor</li>
+              </value>
+            </li>
+
+          </operations>
+        </match>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
+
+</Patch>

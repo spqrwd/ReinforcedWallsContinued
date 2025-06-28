@@ -142,34 +142,34 @@
     </caseTrue>
   </Operation>
 
-    <!-- Steel material cost count -->
+  <!-- Steel material cost count -->
 
-    <Operation Class="XmlExtensions.OptionalPatch">
-      <modId>crewd.reinforcedwallscontinued</modId>
-      <key>reinforcedWallsSteelToggle</key>
-      <defaultValue>True</defaultValue>
-      <caseTrue>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>crewd.reinforcedwallscontinued</modId>
+    <key>reinforcedWallsSteelToggle</key>
+    <defaultValue>True</defaultValue>
+    <caseTrue>
 
-        <Operation Class="XmlExtensions.UseSetting">
-          <modId>crewd.reinforcedwallscontinued</modId>
-          <key>reinforcedWallsSteelCost</key>
-          <defaultValue>5</defaultValue>
-          <apply>
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>crewd.reinforcedwallscontinued</modId>
+        <key>reinforcedWallsSteelCost</key>
+        <defaultValue>5</defaultValue>
+        <apply>
 
-            <li Class="XmlExtensions.PatchOperationSafeAdd">
-              <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
-              <value>
-                <costList>
-                  <Steel>{reinforcedWallsSteelCost}</Steel>
-                </costList>
-              </value>
-            </li>
+          <li Class="XmlExtensions.PatchOperationSafeAdd">
+            <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]</xpath>
+            <value>
+              <costList>
+                <Steel>{reinforcedWallsSteelCost}</Steel>
+              </costList>
+            </value>
+          </li>
 
-          </apply>
-        </Operation>
+        </apply>
+      </Operation>
 
-      </caseTrue>
-    </Operation>
+    </caseTrue>
+  </Operation>
 
   <!-- Plasteel material cost count -->
 

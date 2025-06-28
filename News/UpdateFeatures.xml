@@ -68,4 +68,12 @@ Added mod settings for the following (disabled by default):|
 </content>
   </HugsLib.UpdateFeatureDef>
 
+  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+    <defName>ReinforcedWallsContinued_1_6_1</defName>
+    <assemblyVersion>1.6.1</assemblyVersion>
+    <content>- Refactored the addition of the reinforced security door via patches.|
+- Added a toggle to enable/disable the reinforced security door in the mod settings.
+</content>
+  </HugsLib.UpdateFeatureDef>
+
 </Defs>

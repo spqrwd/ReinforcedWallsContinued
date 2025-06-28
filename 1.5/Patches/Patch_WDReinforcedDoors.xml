@@ -9,6 +9,16 @@
       <success>Normal</success>
       <operations>
 
+        <!-- Add the door build commands to walls -->
+
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
+          <value>
+            <li>WDReinforcedDoor</li>
+            <li>WDReinforcedAutodoor</li>
+          </value>
+        </li>
+
         <!-- Research tech label change -->
 
         <li Class="PatchOperationReplace">
@@ -28,20 +38,6 @@
         </li>
 
         <!-- Definition updates -->
-
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
-          <value>
-            <li>WDReinforcedDoor</li>
-          </value>
-        </li>
-
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
-          <value>
-            <li>WDReinforcedAutodoor</li>
-          </value>
-        </li>
 
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[@Name = "WDReinforcedDoorBase"]</xpath>

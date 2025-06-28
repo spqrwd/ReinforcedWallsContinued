@@ -25,7 +25,7 @@
                 <!-- Research description change -->
 
                 <li Class="PatchOperationConditional">
-                  <xpath>Defs/ThingDef[defName="HeavyReinforcedEmbrasure"]</xpath>
+                  <xpath>Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]</xpath>
                   <match Class="PatchOperationReplace">
                     <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
                     <value>

@@ -384,13 +384,45 @@
                 </caseTrue>
               </li>
 
+              <!-- Reinforced Security Door -->
+
+              <li Class="XmlExtensions.Setting.GapLine"/>
+              <li Class="XmlExtensions.Setting.Checkbox">
+                <key>reinforcedSecurityDoorToggle</key>
+                <defaultValue>True</defaultValue>
+                <label>Enable / disable the reinforced security door (requires Anomaly DLC).</label>
+              </li>
+              <li Class="XmlExtensions.Setting.ToggleableSettings">
+                <key>reinforcedSecurityDoorToggle</key>
+
+                <caseFalse>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>DISABLED: The reinforced security door is unavailable.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseFalse>
+
+                <caseTrue>
+                  <li Class="XmlExtensions.Setting.SetColor">
+                    <color>(163,177,188)</color>
+                  </li>
+                  <li Class="XmlExtensions.Setting.Text">
+                    <text>ENABLED: The reinforced security door is available to build if the Anomaly DLC is active.</text>
+                  </li>
+                  <li Class="XmlExtensions.Setting.SetColor"/>
+                </caseTrue>
+              </li>
+
               <!-- [WD] Reinforced Doors integration -->
 
               <li Class="XmlExtensions.Setting.GapLine"/>
               <li Class="XmlExtensions.Setting.Checkbox">
                 <key>reinforcedWallsWDReinforcedDoorsIntegationToggle</key>
                 <defaultValue>False</defaultValue>
-                <label>Enable [WD] Reinforced Doors mod integration</label>
+                <label>Enable / disable [WD] Reinforced Doors mod integration</label>
               </li>
               <li Class="XmlExtensions.Setting.ToggleableSettings">
                 <key>reinforcedWallsWDReinforcedDoorsIntegationToggle</key>
@@ -407,9 +439,10 @@
                   </li>
                   <li Class="XmlExtensions.Setting.Text">
                     <text>The following changes will be applied to the [WD] Reinforced Doors mod (if present):
-- The research project added by this mod is also required to unlock both reinforced doors.
+- The reinforced autodoor power requirement is rebalanced to match that of the security door from Anomaly DLC (50W).
+- If the research project prerequisite is enabled, it will be required for the doors as well.
 - Reinforced doors get the same damage resistance multipliers as the reinforced walls.
-- Reinforced doors maximum base hit points are increased.
+- Reinforced doors maximum base hit points are increased slightly.
 - Flammability factor is set to match that of the walls.
 </text>
                   </li>

@@ -9,11 +9,23 @@
       <success>Normal</success>
       <operations>
 
+        <!-- Add the door build commands to walls -->
+
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
+          <value>
+            <li>WDReinforcedDoor</li>
+            <li>WDReinforcedAutodoor</li>
+          </value>
+        </li>
+
         <li Class="XmlExtensions.OptionalPatch">
           <modId>crewd.reinforcedwallscontinued</modId>
           <key>reinforcedWallsWDReinforcedDoorsIntegationToggle</key>
-          <defaultValue>false</defaultValue>
+          <defaultValue>False</defaultValue>
           <caseTrue>
+
+            <!-- Research tech label change -->
 
             <li Class="PatchOperationReplace">
               <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/label</xpath>
@@ -25,7 +37,7 @@
             <!-- Research description change -->
 
             <li Class="PatchOperationConditional">
-              <xpath>Defs/ThingDef[defName="HeavyReinforcedEmbrasure"]</xpath>
+              <xpath>Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]</xpath>
               <match Class="PatchOperationReplace">
                 <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
                 <value>
@@ -91,7 +103,7 @@
               </value>
             </li>
 
-            <!-- Rebalancing autodoor to correspond with Anomaly DLC security door -->
+            <!-- Rebalance the autodoor power requirement to match the Anomaly DLC security door -->
 
             <li Class="PatchOperationReplace">
               <xpath>Defs/ThingDef[defName = "WDReinforcedAutodoor"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
@@ -105,7 +117,7 @@
             <li Class="XmlExtensions.OptionalPatch">
               <modId>crewd.reinforcedwallscontinued</modId>
               <key>reinforcedWallsStuffCategoriesWoodyToggle</key>
-              <defaultValue>false</defaultValue>
+              <defaultValue>False</defaultValue>
               <caseFalse>
 
                 <li Class="XmlExtensions.PatchOperationAdd">
@@ -144,7 +156,7 @@
             <li Class="XmlExtensions.OptionalPatch">
               <modId>crewd.reinforcedwallscontinued</modId>
               <key>reinforcedWallsWDReinforcedDoorsExtraMaterialsRequirementToggle</key>
-              <defaultValue>true</defaultValue>
+              <defaultValue>True</defaultValue>
               <caseTrue>
 
                 <!-- Plasteel material cost count -->
@@ -152,7 +164,7 @@
                 <Operation Class="XmlExtensions.OptionalPatch">
                   <modId>crewd.reinforcedwallscontinued</modId>
                   <key>reinforcedWallsPlasteelToggle</key>
-                  <defaultValue>false</defaultValue>
+                  <defaultValue>False</defaultValue>
                   <caseTrue>
 
                     <Operation Class="XmlExtensions.UseSetting">
@@ -182,7 +194,7 @@
                 <Operation Class="XmlExtensions.OptionalPatch">
                   <modId>crewd.reinforcedwallscontinued</modId>
                   <key>reinforcedWallsUraniumToggle</key>
-                  <defaultValue>false</defaultValue>
+                  <defaultValue>False</defaultValue>
                   <caseTrue>
 
                     <Operation Class="XmlExtensions.UseSetting">
@@ -212,7 +224,7 @@
                 <Operation Class="XmlExtensions.OptionalPatch">
                   <modId>crewd.reinforcedwallscontinued</modId>
                   <key>reinforcedWallsHyperweaveToggle</key>
-                  <defaultValue>true</defaultValue>
+                  <defaultValue>False</defaultValue>
                   <caseTrue>
 
                     <Operation Class="XmlExtensions.UseSetting">
@@ -242,7 +254,7 @@
                 <Operation Class="XmlExtensions.OptionalPatch">
                   <modId>crewd.reinforcedwallscontinued</modId>
                   <key>reinforcedWallsDevilstrandToggle</key>
-                  <defaultValue>false</defaultValue>
+                  <defaultValue>False</defaultValue>
                   <caseTrue>
 
                     <Operation Class="XmlExtensions.UseSetting">
@@ -267,8 +279,8 @@
                   </caseTrue>
                 </Operation>
 
-            </caseTrue>
-          </li>
+              </caseTrue>
+            </li>
 
           </caseTrue>
         </li>
