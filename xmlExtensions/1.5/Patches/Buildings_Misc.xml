@@ -13,20 +13,20 @@
           <success>Normal</success>
           <operations>
 
-            <li Class="PatchOperationAttributeAdd">
+            <li Class="XmlExtensions.PatchOperationAttributeAdd">
               <xpath>Defs/ThingDef[defName = "SecurityDoor"]</xpath>
               <attribute>Name</attribute>
               <value>SecurityDoorBase</value>
             </li>
 
-            <li Class="PatchOperationAdd">
+            <li Class="XmlExtensions.PatchOperationAdd">
               <xpath>Defs/ThingDef[defName = "SecurityDoor"]</xpath>
               <value>
                 <uiOrder>2011</uiOrder>
               </value>
             </li>
 
-            <li Class="PatchOperationAdd">
+            <li Class="XmlExtensions.PatchOperationAdd">
               <xpath>Defs</xpath>
               <value>
                 <ThingDef ParentName="SecurityDoorBase">
@@ -67,7 +67,7 @@
 
             <!-- Add the new security door build command to walls -->
 
-            <li Class="PatchOperationAdd">
+            <li Class="XmlExtensions.PatchOperationAdd">
               <xpath>Defs/ThingDef[@Name = "Wall"]/building/relatedBuildCommands</xpath>
               <value>
                 <li>ReinforcedSecurityDoor</li>

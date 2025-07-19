@@ -76,4 +76,12 @@ Added mod settings for the following (disabled by default):|
 </content>
   </HugsLib.UpdateFeatureDef>
 
+  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+    <defName>ReinforcedWallsContinued_1_6_2</defName>
+    <assemblyVersion>1.6.2</assemblyVersion>
+    <content>- Added a patch to make [WD] Reinforced Doors airtight.|
+- Updated dds texture files.
+</content>
+  </HugsLib.UpdateFeatureDef>
+
 </Defs>

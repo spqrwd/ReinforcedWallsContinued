@@ -9,7 +9,7 @@
     <defaultValue>True</defaultValue>
     <caseFalse>
 
-      <li Class="PatchOperationRemove">
+      <li Class="XmlExtensions.PatchOperationRemove">
         <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/requiredResearchBuilding</xpath>
       </li>
 
@@ -24,7 +24,7 @@
     <defaultValue>True</defaultValue>
     <caseFalse>
 
-      <Operation Class="PatchOperationRemove">
+      <Operation Class="XmlExtensions.PatchOperationRemove">
         <xpath>Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]</xpath>
       </Operation>
 
@@ -51,14 +51,14 @@
             <success>Normal</success>
             <operations>
 
-              <li Class="PatchOperationReplace">
+              <li Class="XmlExtensions.PatchOperationReplace">
                 <xpath>Defs/ThingDef[defName = "HeavyReinforcedEmbrasure"]/fillPercent</xpath>
                 <value>
                   <fillPercent>{reinforcedEmbrasuresFillPercentValue}</fillPercent>
                 </value>
               </li>
 
-              <li Class="PatchOperationReplace">
+              <li Class="XmlExtensions.PatchOperationReplace">
                 <xpath>Defs/ResearchProjectDef[defName = "ReinforcedWalls"]/description</xpath>
                 <value>
                   <description>Expensive, reinforced walls and embrasures that are resistant to all forms of damage.</description>
@@ -90,7 +90,7 @@
         <defaultValue>900</defaultValue>
         <apply>
 
-          <li Class="PatchOperationReplace">
+          <li Class="XmlExtensions.PatchOperationReplace">
             <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]/statBases/MaxHitPoints</xpath>
             <value>
               <MaxHitPoints>{reinforcedWallsBaseHitPoints}</MaxHitPoints>
@@ -108,7 +108,7 @@
         <defaultValue>15</defaultValue>
         <apply>
 
-          <li Class="PatchOperationReplace">
+          <li Class="XmlExtensions.PatchOperationReplace">
             <xpath>Defs/ThingDef[@Name = "ReinforcedWallBase"]/costStuffCount</xpath>
             <value>
               <costStuffCount>{reinforcedWallsCostStuffCount}</costStuffCount>

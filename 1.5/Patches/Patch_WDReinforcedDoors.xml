@@ -88,6 +88,23 @@
           </value>
         </li>
 
+        <!-- Make the doors airtight -->
+
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[@Name = "WDReinforcedDoorBase"]/building/isStuffableAirtight</xpath>
+          <nomatch Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName = "WDReinforcedDoor" and defName = "WDReinforcedAutodoor"]/building/isStuffableAirtight</xpath>
+            <nomatch Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[defName = "WDReinforcedDoor" or defName = "WDReinforcedAutodoor"]</xpath>
+              <value>
+                <building>
+                  <isStuffableAirtight IgnoreIfNoMatchingField="True">true</isStuffableAirtight>
+                </building>
+              </value>
+            </nomatch>
+          </nomatch>
+        </li>
+
         <!-- Rebalancing autodoor values to correspond with Anomaly DLC security door -->
 
         <li Class="PatchOperationReplace">
